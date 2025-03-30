@@ -28,7 +28,7 @@ const GenerateButton = () => {
   return (
     <div className="relative group">
       {/* Glow effect */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-light"></div>
+      <div className="absolute -inset-1 bg-gradient-to-r from-white/50 to-white/30 rounded-full blur-xl opacity-40 group-hover:opacity-70 transition duration-1000 group-hover:duration-200 animate-pulse-light"></div>
       
       {/* Main button */}
       <Button
@@ -36,8 +36,8 @@ const GenerateButton = () => {
         disabled={isGenerating}
         className={cn(
           "relative min-w-[260px] h-16 px-10 text-lg font-medium rounded-full overflow-hidden z-10",
-          "bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-500 hover:via-purple-500 hover:to-blue-500",
-          "border border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.36)]",
+          "bg-black border border-white/30 hover:bg-zinc-900",
+          "shadow-[0_8px_30px_rgb(0,0,0,0.36)]",
           "transition-all duration-500 ease-out",
           isGenerating ? "opacity-90" : "opacity-100"
         )}
