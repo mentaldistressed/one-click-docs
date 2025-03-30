@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -39,7 +38,8 @@ const GenerateButton = () => {
           "bg-black border border-white/30 hover:bg-zinc-900",
           "shadow-[0_8px_30px_rgb(0,0,0,0.36)]",
           "transition-all duration-500 ease-out",
-          isGenerating ? "opacity-90" : "opacity-100"
+          isGenerating ? "opacity-90" : "opacity-100",
+          "disabled:text-white/70 disabled:border-white/20"
         )}
       >
         <span className={cn(
