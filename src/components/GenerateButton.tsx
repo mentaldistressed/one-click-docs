@@ -11,15 +11,18 @@ const GenerateButton = () => {
   const handleGenerate = () => {
     setIsGenerating(true);
     
-    // Simulate document generation
+    // Show loading state briefly before redirecting
     setTimeout(() => {
+      // Redirect to the specified URL
+      window.location.href = 'https://docs.rpluslb.ru';
+      
       setIsGenerating(false);
       toast({
-        title: "Success",
-        description: "Operation completed successfully.",
+        title: "Перенаправление...",
+        description: "Вы будете перенаправлены на docs.rpluslb.ru",
         variant: "default",
       });
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -46,7 +49,9 @@ const GenerateButton = () => {
         <span className={cn(
           "flex items-center justify-center gap-2 transition-all duration-300",
           isGenerating ? "opacity-0" : "opacity-100"
-        )}></span>
+        )}>
+          Генерация договора
+        </span>
         
         <span className={cn(
           "absolute inset-0 flex items-center justify-center transition-all duration-300",
