@@ -5,7 +5,13 @@ const BackgroundOverlay = () => {
   return (
     <div className="fixed inset-0 z-[-1]">
       {/* Dark gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f1629] via-[#121933] to-[#0c1023]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0c0a20] via-[#141236] to-[#0a0720]"></div>
+      
+      {/* Animated gradient overlay */}
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(120,60,180,0.15),transparent_70%)] animate-pulse-light" style={{animationDuration: '10s'}}></div>
+        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(60,80,180,0.15),transparent_70%)] animate-pulse-light" style={{animationDuration: '8s', animationDelay: '3s'}}></div>
+      </div>
       
       {/* Noise overlay */}
       <div 
@@ -15,8 +21,22 @@ const BackgroundOverlay = () => {
         }}
       ></div>
       
-      {/* Radial gradient at the center */}
-      <div className="absolute inset-0 bg-gradient-radial from-purple-900/10 via-transparent to-transparent"></div>
+      {/* Light beam effect */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-32 bg-[radial-gradient(ellipse_at_center,rgba(120,70,200,0.05),transparent_70%)] rotate-[30deg] animate-pulse-light" style={{animationDuration: '15s'}}></div>
+      
+      {/* Star-like subtle light points */}
+      {Array.from({ length: 20 }).map((_, index) => (
+        <div 
+          key={index}
+          className="absolute w-[1px] h-[1px] rounded-full bg-white opacity-70 animate-pulse-light"
+          style={{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            animationDuration: `${2 + Math.random() * 6}s`,
+            animationDelay: `${Math.random() * 5}s`,
+          }}
+        ></div>
+      ))}
     </div>
   );
 };

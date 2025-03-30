@@ -103,4 +103,19 @@
       transform: scale(0.5) translateX(100%) rotate(45deg);
     }
   }
+
+  @keyframes float-particles {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-15px) translateX(5px); }
+    50% { transform: translateY(5px) translateX(-10px); }
+    75% { transform: translateY(10px) translateX(5px); }
+  }
+
+  .animate-float-particles {
+    animation: float-particles 15s ease-in-out infinite;
+  }
+
+  .filter-blur {
+    filter: blur(8px);
+  }
 }
